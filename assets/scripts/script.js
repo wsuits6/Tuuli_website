@@ -215,7 +215,7 @@
 
             updateCart();
             updateCartCount();
-            showNotification('Product added to cart!');
+            showNotification('Product added to cart');
         }
 
         // Update Cart Display
@@ -324,13 +324,15 @@
         }
 
         // Filter Products
-        function filterByCategory(category) {
+        function filterByCategory(event, category) {
             currentFilter = category;
             
             // Update active button
             const filterButtons = document.querySelectorAll('.filter-btn');
             filterButtons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if (event.currentTarget.classList.contains('filter-btn')) {
+                event.currentTarget.classList.add('active');
+            }
 
             const filtered = getFilteredProducts();
             displayProducts(filtered);
@@ -425,7 +427,8 @@
 
         // Mobile Menu Toggle
         function toggleMobileMenu() {
-            alert('Mobile menu - You can implement a slide-out menu here');
+            const mobileNav = document.getElementById('mobile-nav');
+            mobileNav.classList.toggle('open');
         }
 
         // Smooth Scrolling for anchor links

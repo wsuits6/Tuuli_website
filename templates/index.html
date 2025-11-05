@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaTU Market - Ghana's Online Marketplace</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./assets/styles/dark.css">
+    <link rel="stylesheet" href="../assets/styles/dark.css">
 </head>
 <body>
     <!-- Top Bar -->
@@ -44,8 +44,13 @@
                     <i class="fas fa-shopping-cart"></i>
                     <span class="badge" id="cartCount">0</span>
                 </div>
-                <div class="header-icon">
+                <div class="header-icon" id="user-menu">
                     <i class="fas fa-user"></i>
+                    <div class="dropdown-menu">
+                        <a href="login.html">Login</a>
+                        <a href="signup.html">Sign Up</a>
+                        <a href="#">Logout</a>
+                    </div>
                 </div>
             </div>
 
@@ -56,7 +61,7 @@
     </header>
 
     <!-- Navigation -->
-    <nav>
+    <nav id="main-nav">
         <div class="nav-content">
             <ul class="nav-links">
                 <li><a href="#" class="active">Home</a></li>
@@ -64,10 +69,21 @@
                 <li><a href="#categories">Categories</a></li>
                 <li><a href="#features">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#seller" class="highlight">Become a Seller</a></li>
+                <li><a href="seller_profile.html" class="highlight">Become a Seller</a></li>
             </ul>
         </div>
     </nav>
+
+    <div class="mobile-nav-container" id="mobile-nav">
+        <ul class="mobile-nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#products">Shop</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#features">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="seller_profile.html" class="highlight">Become a Seller</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -75,7 +91,7 @@
             <h1>Welcome to TaTU Market</h1>
             <p>Ghana’s online marketplace connecting sellers and buyers. Upload your products, shop safely, and enjoy seamless transactions!</p>
             <a href="#products" class="cta-button">Shop Now <i class="fas fa-arrow-right"></i></a>
-            <a href="#seller" class="cta-button secondary">Become a Seller <i class="fas fa-upload"></i></a>
+            <a href="seller_profile.html" class="cta-button secondary">Become a Seller <i class="fas fa-upload"></i></a>
         </div>
     </section>
 
@@ -83,32 +99,32 @@
     <section class="categories-section" id="categories">
         <h2 class="section-title">Browse by Category</h2>
         <div class="categories-grid">
-            <div class="category-card" onclick="filterByCategory('Electronics')">
+            <div class="category-card" onclick="filterByCategory(event, 'Electronics')">
                 <div class="category-icon"><i class="fas fa-laptop"></i></div>
                 <h3>Electronics</h3>
                 <p>Latest gadgets & tech</p>
             </div>
-            <div class="category-card" onclick="filterByCategory('Fashion')">
+            <div class="category-card" onclick="filterByCategory(event, 'Fashion')">
                 <div class="category-icon"><i class="fas fa-tshirt"></i></div>
                 <h3>Fashion</h3>
                 <p>Clothing & accessories</p>
             </div>
-            <div class="category-card" onclick="filterByCategory('Home')">
+            <div class="category-card" onclick="filterByCategory(event, 'Home')">
                 <div class="category-icon"><i class="fas fa-home"></i></div>
                 <h3>Home & Living</h3>
                 <p>Furniture & decor</p>
             </div>
-            <div class="category-card" onclick="filterByCategory('Beauty')">
+            <div class="category-card" onclick="filterByCategory(event, 'Beauty')">
                 <div class="category-icon"><i class="fas fa-spa"></i></div>
                 <h3>Beauty</h3>
                 <p>Cosmetics & skincare</p>
             </div>
-            <div class="category-card" onclick="filterByCategory('Sports')">
+            <div class="category-card" onclick="filterByCategory(event, 'Sports')">
                 <div class="category-icon"><i class="fas fa-basketball-ball"></i></div>
                 <h3>Sports</h3>
                 <p>Fitness & outdoor</p>
             </div>
-            <div class="category-card" onclick="filterByCategory('Toys')">
+            <div class="category-card" onclick="filterByCategory(event, 'Toys')">
                 <div class="category-icon"><i class="fas fa-gamepad"></i></div>
                 <h3>Toys & Games</h3>
                 <p>Fun for all ages</p>
@@ -122,11 +138,11 @@
         
         <div class="filter-bar">
             <div class="filter-buttons">
-                <button class="filter-btn active" onclick="filterByCategory('All')">All Products</button>
-                <button class="filter-btn" onclick="filterByCategory('Electronics')">Electronics</button>
-                <button class="filter-btn" onclick="filterByCategory('Fashion')">Fashion</button>
-                <button class="filter-btn" onclick="filterByCategory('Home')">Home</button>
-                <button class="filter-btn" onclick="filterByCategory('Beauty')">Beauty</button>
+                <button class="filter-btn active" onclick="filterByCategory(event, 'All')">All Products</button>
+                <button class="filter-btn" onclick="filterByCategory(event, 'Electronics')">Electronics</button>
+                <button class="filter-btn" onclick="filterByCategory(event, 'Fashion')">Fashion</button>
+                <button class="filter-btn" onclick="filterByCategory(event, 'Home')">Home</button>
+                <button class="filter-btn" onclick="filterByCategory(event, 'Beauty')">Beauty</button>
             </div>
             <select class="sort-dropdown" onchange="sortProducts(this.value)">
                 <option value="featured">Featured</option>
@@ -171,7 +187,7 @@
     <!-- Seller Section -->
     <section class="seller-section" id="seller">
         <h2 class="section-title">Become a Seller</h2>
-        <p>Join TaTU Market as a seller, upload your products, and reach thousands of buyers in Ghana. <a href="#">Sign up now!</a></p>
+        <p>Join TaTU Market as a seller, upload your products, and reach thousands of buyers in Ghana. <a href="seller_profile.html">Sign up now!</a></p>
     </section>
 
     <!-- Cart Sidebar -->
@@ -259,8 +275,8 @@
 </button>
 
 
-    <script src="./assets/scripts/script.js"> </script>
+    <script src="../assets/scripts/script.js"> </script>
     <!---javascript to toggle themes-->
-    <script src="./assets/scripts/toggle.js"></script>
+    <script src="../assets/scripts/toggle.js"></script>
 </body>
 </html>

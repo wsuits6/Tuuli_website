@@ -135,6 +135,33 @@
             transform: scale(1.1);
         }
 
+        #user-menu .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background-color: var(--white);
+            border: 1px solid #e5e7eb;
+            border-radius: 5px;
+            padding: 5px 0;
+            z-index: 1001;
+        }
+
+        #user-menu:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: var(--light-gray);
+        }
+
         .badge {
             position: absolute;
             top: -8px;
@@ -158,6 +185,29 @@
             border: none;
             color: var(--primary-blue);
             cursor: pointer;
+        }
+
+        .mobile-nav-container {
+            display: none;
+            background-color: var(--white);
+            padding: 20px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+        }
+
+        .mobile-nav-links a {
+            display: block;
+            padding: 10px 0;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .mobile-nav-container.open {
+            display: block;
         }
 
         /* Navigation */
@@ -238,10 +288,15 @@
             text-decoration: none;
         }
 
-        .cta-button:hover {
-            background: var(--dark-gold);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(217, 119, 6, 0.3);
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--white);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--gold);
+            color: var(--text-dark);
         }
 
         /* Categories Section */

@@ -148,6 +148,33 @@
             transform: scale(1.1);
         }
 
+        #user-menu .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 5px 0;
+            z-index: 1001;
+        }
+
+        #user-menu:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: var(--text-light);
+            text-decoration: none;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: var(--primary-blue);
+        }
+
         .badge {
             position: absolute;
             top: -8px;
@@ -171,6 +198,28 @@
             border: none;
             color: var(--light-blue);
             cursor: pointer;
+        }
+
+        .mobile-nav-container {
+            display: none;
+            background-color: var(--card-bg);
+            padding: 20px;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+        }
+
+        .mobile-nav-links a {
+            display: block;
+            padding: 10px 0;
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .mobile-nav-container.open {
+            display: block;
         }
 
         /* Navigation */
@@ -251,10 +300,15 @@
             text-decoration: none;
         }
 
-        .cta-button:hover {
-            background: var(--dark-gold);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(245, 158, 11, 0.4);
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--gold);
+            color: var(--darker-bg);
         }
 
         /* Categories Section */

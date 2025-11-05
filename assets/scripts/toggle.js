@@ -19,7 +19,7 @@ function toggleTheme() {
     }
 
     // Apply the new theme
-    themeLink.setAttribute('href', `./assets/styles/${newTheme}.css`);
+    themeLink.setAttribute('href', `../assets/styles/${newTheme}.css`);
 
     // Save the user preference to localStorage
     localStorage.setItem('theme', newTheme);
@@ -49,15 +49,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (savedTheme && themeLink) {
         // Apply saved theme
-        themeLink.setAttribute('href', `./assets/styles/${savedTheme}.css`);
+        themeLink.setAttribute('href', `../assets/styles/${savedTheme}.css`);
         updateToggleIcon(savedTheme);
     } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
         // 2. If no saved theme, check browser/OS preference for dark mode
-        themeLink.setAttribute('href', './assets/styles/dark.css');
+        themeLink.setAttribute('href', '../assets/styles/dark.css');
         updateToggleIcon('dark');
     } else {
         // 3. Default to light theme if nothing else matches
-        themeLink.setAttribute('href', './assets/styles/light.css');
+        themeLink.setAttribute('href', '../assets/styles/light.css');
         updateToggleIcon('light');
     }
 });
@@ -68,7 +68,7 @@ if (window.matchMedia) {
         // Only update if user has not manually selected a theme
         if (!localStorage.getItem('theme')) {
             const newTheme = e.matches ? 'dark' : 'light';
-            themeLink.setAttribute('href', `./assets/styles/${newTheme}.css`);
+            themeLink.setAttribute('href', `../assets/styles/${newTheme}.css`);
             updateToggleIcon(newTheme);
         }
     });

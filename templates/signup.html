@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - TaTU Market</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/styles/dark.css">
+    <link rel="stylesheet" href="../assets/styles/auth.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content" style="max-width: 1200px; margin: 0 auto; padding: 20px; display: flex; justify-content: center;">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;"><i class="fas fa-store"></i> TATU Market</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sign Up Form -->
+    <div class="auth-container">
+        <h2 class="auth-title">Create Your Account</h2>
+        <form action="/handle-signup" method="POST">
+            <!-- 
+                SECURITY: Use HTTPS. The form action should point to a secure, server-side endpoint.
+                Implement CSRF (Cross-Site Request Forgery) protection with a hidden token.
+            -->
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required minlength="8">
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <button type="submit" class="auth-btn">Create Account</button>
+            <div class="auth-links">
+                <p>Already have an account? <a href="login.html">Login</a></p>
+            </div>
+        </form>
+        <!-- 
+            SECURITY NOTE FOR DEVELOPERS:
+            - Server-side validation is crucial. Ensure passwords match and meet complexity requirements.
+            - NEVER store passwords in plaintext. Use a strong, one-way hashing algorithm like Argon2 or bcrypt.
+            - After signup, consider implementing an email verification step to confirm user identity.
+        -->
+    </div>
+
+    <script src="../assets/scripts/toggle.js"></script>
+</body>
+</html>
