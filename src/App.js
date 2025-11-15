@@ -12,7 +12,7 @@ import SellerProfile from './components/SellerProfile';
 import Settings from './components/Settings';
 import SignUp from './components/SignUp';
 
-function App() {
+function App() { 
     return (
         <Router>
             <Routes>
